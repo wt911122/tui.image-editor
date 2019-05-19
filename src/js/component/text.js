@@ -144,7 +144,7 @@ class Text extends Component {
 
         if (this.useItext) {
             canvas.forEachObject(obj => {
-                if (obj.type === 'i-text') {
+                if (obj.type === 'i-text' && !obj.watermark) {
                     obj.set({
                         left: obj.left - (obj.width / 2),
                         top: obj.top - (obj.height / 2),
@@ -171,7 +171,7 @@ class Text extends Component {
 
         if (this.useItext) {
             canvas.forEachObject(obj => {
-                if (obj.type === 'i-text') {
+                if (obj.type === 'i-text' && !obj.watermark) {
                     if (obj.text === '') {
                         canvas.remove(obj);
                     } else {

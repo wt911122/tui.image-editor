@@ -368,7 +368,7 @@ class Graphics {
         this.stopDrawingMode();
 
         const drawingModeInstance = this._getDrawingModeInstance(mode);
-        console.log(drawingModeInstance);
+        // console.log(drawingModeInstance);
         if (drawingModeInstance && drawingModeInstance.start) {
             drawingModeInstance.start(this, option);
 
@@ -388,6 +388,7 @@ class Graphics {
 
         const drawingModeInstance = this._getDrawingModeInstance(this.getDrawingMode());
         if (drawingModeInstance && drawingModeInstance.end) {
+            // console.log('end draw mode');
             drawingModeInstance.end(this);
         }
         this._drawingMode = drawingModes.NORMAL;
@@ -769,7 +770,7 @@ class Graphics {
      * @private
      */
     _getDrawingModeInstance(modeName) {
-        console.log(this._drawingModeMap, modeName);
+        // console.log(this._drawingModeMap, modeName);
 
         return this._drawingModeMap[modeName];
     }
@@ -942,7 +943,7 @@ class Graphics {
      * @private
      */
     _onObjectAdded(fEvent) {
-        console.log('_onObjectAdded');
+        // console.log('_onObjectAdded');
         const obj = fEvent.target;
         if (obj.isType('cropzone')) {
             return;
@@ -994,7 +995,7 @@ class Graphics {
     _onObjectSelected(fEvent) {
         const {target} = fEvent;
         const params = this.createObjectProperties(target);
-        console.log('_onObjectSelected');
+        // console.log('_onObjectSelected');
         this.fire(events.OBJECT_ACTIVATED, params);
     }
 

@@ -14,7 +14,7 @@ const command = {
 
     execute(graphics, text, options) {
         const watermarkComp = graphics.getComponent(WATERMARK);
-        console.log('execute watermark', text, options);
+        // console.log('execute watermark', text, options);
 
         return watermarkComp.add(text, options)
             .then(objectProps => {

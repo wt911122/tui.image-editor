@@ -33,7 +33,7 @@ const command = {
     execute(graphics, id, options) {
         const watermarkComp = graphics.getComponent(WATERMARK);
         const targetObj = graphics.getObject(id);
-        console.log('change watermark', id, options);
+        // console.log('change watermark', id, options);
 
         if (!targetObj) {
             return Promise.reject(rejectMessages.noObject);

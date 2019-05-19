@@ -3,7 +3,6 @@ import Promise from 'core-js/library/es6/promise';
 import snippet from 'tui-code-snippet';
 import Text from './text';
 import consts from '../consts';
-const events = consts.eventNames;
 
 class Watermark extends Text {
     constructor(graphics) {
@@ -100,10 +99,10 @@ class Watermark extends Text {
         });
     }
 
-    start(type) {
-        console.log(type);
+    start() {
+        // console.log(type);
         const canvas = this.getCanvas();
-        console.log(this.graphics.getActiveObject());
+        // console.log(this.graphics.getActiveObject());
         if (this.graphics.getActiveObject()) {
             return;
         }
@@ -117,27 +116,27 @@ class Watermark extends Text {
             'text:editing': this._listeners.modify
         });
 
-        if (this.useItext) {
-            canvas.forEachObject(obj => {
-                if (obj.type === 'i-text') {
-                    obj.set({
-                        left: obj.left - (obj.width / 2),
-                        top: obj.top - (obj.height / 2),
-                        originX: 'left',
-                        originY: 'top'
-                    });
-                }
-            });
-        } else {
-            this._createTextarea();
-        }
+        // if (this.useItext) {
+        //     canvas.forEachObject(obj => {
+        //         if (obj.type === 'i-text') {
+        //             obj.set({
+        //                 left: obj.left - (obj.width / 2),
+        //                 top: obj.top - (obj.height / 2),
+        //                 originX: 'left',
+        //                 originY: 'top'
+        //             });
+        //         }
+        //     });
+        // } else {
+        //     this._createTextarea();
+        // }
 
-        this.setCanvasRatio();
+        // this.setCanvasRatio();
         // if (!this.watermarkTarget) {
-        if (this.watermarkTarget) {
-            // this.graphics.setActiveObject(null);
-            canvas.remove(this.watermarkTarget);
-        }
+        // if (this.watermarkTarget) {
+        //     // this.graphics.setActiveObject(null);
+        //     canvas.remove(this.watermarkTarget);
+        // }
 
         // this.fire(events.ADD_WATERMARK, {
         //     originPosition: {

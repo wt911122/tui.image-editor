@@ -15,6 +15,7 @@ import Draw from './ui/draw';
 import Filter from './ui/filter';
 import Locale from './ui/locale/locale';
 import Watermark from './ui/watermark';
+import defaultLocale from './ui/locale/zh.js';
 
 const SUB_UI_COMPONENT = {
     Shape,
@@ -234,7 +235,7 @@ class Ui {
                 path: '',
                 name: ''
             },
-            locale: {},
+            locale: defaultLocale,
             menuIconPath: '',
             menu: ['crop', 'flip', 'rotate', 'draw', 'shape', 'icon', 'text', 'watermark', 'filter'],
             initMenu: '',

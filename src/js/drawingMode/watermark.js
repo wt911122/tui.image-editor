@@ -25,7 +25,7 @@ class WaterMarkMode extends DrawingMode {
     */
     start(graphics, type) {
         const watermark = graphics.getComponent(components.WATERMARK);
-        console.log('WaterMarkMode start!');
+        // console.log('WaterMarkMode start!');
         watermark.start(type);
     }
 

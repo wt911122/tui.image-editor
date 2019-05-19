@@ -420,7 +420,7 @@ export default {
 
                 this.ui.changeDeleteButtonEnabled(true);
                 this.ui.changeDeleteAllButtonEnabled(true);
-                console.log(obj);
+                // console.log(obj);
                 if (obj.type === 'cropzone') {
                     this.ui.crop.changeApplyButtonStatus(true);
                 } else if (['rect', 'circle', 'triangle'].indexOf(obj.type) > -1) {
@@ -441,7 +441,7 @@ export default {
                         this.ui.draw.changeStandbyMode();
                     }
                 } else if (['i-text', 'text'].indexOf(obj.type) > -1) {
-                    console.log(this.ui.submenu);
+                    // console.log(this.ui.submenu);
                     if (!obj.watermark) {
                         if (this.ui.submenu !== 'text') {
                             this.ui.changeMenu('text', false, false);
@@ -536,17 +536,17 @@ export default {
         return extend({
             changeWatermark: setting => {
                 if (this.activeObjectId) {
-                    console.log(setting.opacity);
+                    // console.log(setting.opacity);
                     this.changeWatermark(this.activeObjectId, setting);
                 }
             },
             drawWatermarker: type => {
                 this.addWatermark('集货宝', type);
-            },
-            drawWaterMarkMode: type => {
-                console.log('drawWaterMarkMode');
-                this.startDrawingMode('WATERMARK', type);
             }
+            // drawWaterMarkMode: type => {
+            //     console.log('drawWaterMarkMode');
+            //     this.startDrawingMode('WATERMARK', type);
+            // }
         }, this._commonAction());
     },
 

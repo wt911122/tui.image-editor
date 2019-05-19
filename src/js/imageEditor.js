@@ -77,6 +77,7 @@ class ImageEditor {
             includeUI: false,
             usageStatistics: true
         }, options);
+        // console.log(options);
 
         this.mode = null;
 

@@ -14,7 +14,10 @@
         </style>
     </head>
     <body>
-
+        <div id="pictures">
+            <img style="height: 50px;width: auto;object-fit: contain" src='img/sampleImage2.png'/>
+            <img style="height: 50px;width: auto;object-fit: contain" src='img/sampleImage.jpg'/>
+        </div>
         <div id="tui-image-editor-container"></div>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.7.0/fabric.js"></script>
         <script type="text/javascript" src="https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.min.js"></script>
@@ -39,6 +42,12 @@
              cssMaxWidth: 700,
              cssMaxHeight: 500
          });
+         document.getElementById('pictures').addEventListener('click', e => {
+            console.log(e.target.src)
+            imageEditor.loadImageFromURL(e.target.src, 'SampleImage').then(sizeValue => {
+                imageEditor.clearUndoStack();
+            });
+         })
 
          window.onresize = function() {
              imageEditor.ui.resizeEditor();
