@@ -1,13 +1,13 @@
 {
-  "name": "tui-image-editor",
-  "author": "NHN FE Development Lab <dl_javascript@nhn.com>",
-  "version": "3.6.0",
+  "name": "tui-image-editor-modify",
+  "author": "TonyWang",
+  "version": "0.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nhn/tui.image-editor.git"
+    "url": "https://github.com/wt911122/tui.image-editor"
   },
-  "main": "dist/tui-image-editor.js",
+  "main": "dist/tui-image-editor-modify.js",
   "description": "TOAST UI Component: ImageEditor",
   "keywords": [
     "nhn",
