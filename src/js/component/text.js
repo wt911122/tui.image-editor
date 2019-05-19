@@ -248,6 +248,7 @@ class Text extends Component {
             }
 
             this.isPrevEditing = true;
+
             resolve(this.graphics.createObjectProperties(newText));
         });
     }

@@ -133,6 +133,8 @@ class ImageEditor {
             iconCreateEnd: this._onIconCreateEnd.bind(this),
             selectionCleared: this._selectionCleared.bind(this),
             selectionCreated: this._selectionCreated.bind(this)
+            // addWatermark: this._addWatermark.bind(this)
+            // changeWatermark: this._changeWatermark.bind(this)
         };
 
         this._attachInvokerEvents();
@@ -284,6 +286,7 @@ class ImageEditor {
             'selectionCleared': this._handlers.selectionCleared,
             'selectionCreated': this._handlers.selectionCreated,
             'addObjectAfter': this._handlers.addObjectAfter
+            // 'addWatermark': this._handlers.addWatermark
         });
     }
 
@@ -1161,6 +1164,18 @@ class ImageEditor {
      */
     _selectionCreated(eventTarget) {
         this.fire(events.SELECTION_CREATED, eventTarget);
+    }
+
+    // _addWatermark(eventTarget) {
+    //     this.execute(commands.SET_WATERMARK_MODE, '集货宝', eventTarget);
+    // }
+
+    addWatermark(text, type) {
+        return this.execute(commands.SET_WATERMARK_MODE, text, type);
+    }
+
+    changeWatermark(id, settings) {
+        return this.execute(commands.CHANGE_WATERMARK, id, settings);
     }
 
     /**

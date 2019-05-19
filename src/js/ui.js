@@ -14,6 +14,7 @@ import Icon from './ui/icon';
 import Draw from './ui/draw';
 import Filter from './ui/filter';
 import Locale from './ui/locale/locale';
+import Watermark from './ui/watermark';
 
 const SUB_UI_COMPONENT = {
     Shape,
@@ -24,7 +25,8 @@ const SUB_UI_COMPONENT = {
     Mask,
     Icon,
     Draw,
-    Filter
+    Filter,
+    Watermark
 };
 
 const BI_EXPRESSION_MINSIZE_WHEN_TOP_POSITION = '1300';
@@ -234,7 +236,7 @@ class Ui {
             },
             locale: {},
             menuIconPath: '',
-            menu: ['crop', 'flip', 'rotate', 'draw', 'shape', 'icon', 'text', 'mask', 'filter'],
+            menu: ['crop', 'flip', 'rotate', 'draw', 'shape', 'icon', 'text', 'watermark', 'filter'],
             initMenu: '',
             uiSize: {
                 width: '100%',
@@ -248,7 +250,7 @@ class Ui {
      * Set ui container size
      * @param {Object} uiSize - ui dimension
      *   @param {string} uiSize.width - css width property
-     *   @param {string} uiSize.height - css height property 
+     *   @param {string} uiSize.height - css height property
      * @private
      */
     _setUiSize(uiSize = this.options.uiSize) {
@@ -264,7 +266,6 @@ class Ui {
     _makeSubMenu() {
         snippet.forEach(this.options.menu, menuName => {
             const SubComponentClass = SUB_UI_COMPONENT[menuName.replace(/^[a-z]/, $0 => $0.toUpperCase())];
-
             // make menu element
             this._makeMenuElement(menuName);
 

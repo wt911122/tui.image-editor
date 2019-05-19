@@ -326,6 +326,7 @@ imageEditor.on({
             setIconToolbar(obj);
             activateIconMode();
         } else if (obj.type === 'text') {
+            console.log(obj);
             showSubMenu('text');
             setTextToolbar(obj);
             activateTextMode();

@@ -15,11 +15,13 @@ import Text from './component/text';
 import Icon from './component/icon';
 import Filter from './component/filter';
 import Shape from './component/shape';
+import Watermark from './component/watermark';
 import CropperDrawingMode from './drawingMode/cropper';
 import FreeDrawingMode from './drawingMode/freeDrawing';
 import LineDrawingMode from './drawingMode/lineDrawing';
 import ShapeDrawingMode from './drawingMode/shape';
 import TextDrawingMode from './drawingMode/text';
+import WatermarkDrawingMode from './drawingMode/watermark';
 import consts from './consts';
 import util from './util';
 
@@ -366,6 +368,7 @@ class Graphics {
         this.stopDrawingMode();
 
         const drawingModeInstance = this._getDrawingModeInstance(mode);
+        console.log(drawingModeInstance);
         if (drawingModeInstance && drawingModeInstance.start) {
             drawingModeInstance.start(this, option);
 
@@ -766,6 +769,8 @@ class Graphics {
      * @private
      */
     _getDrawingModeInstance(modeName) {
+        console.log(this._drawingModeMap, modeName);
+
         return this._drawingModeMap[modeName];
     }
 
@@ -814,6 +819,7 @@ class Graphics {
         this._register(this._drawingModeMap, new LineDrawingMode());
         this._register(this._drawingModeMap, new ShapeDrawingMode());
         this._register(this._drawingModeMap, new TextDrawingMode());
+        this._register(this._drawingModeMap, new WatermarkDrawingMode());
     }
 
     /**
@@ -831,6 +837,7 @@ class Graphics {
         this._register(this._componentMap, new Icon(this));
         this._register(this._componentMap, new Filter(this));
         this._register(this._componentMap, new Shape(this));
+        this._register(this._componentMap, new Watermark(this));
     }
 
     /**
@@ -935,6 +942,7 @@ class Graphics {
      * @private
      */
     _onObjectAdded(fEvent) {
+        console.log('_onObjectAdded');
         const obj = fEvent.target;
         if (obj.isType('cropzone')) {
             return;
@@ -986,7 +994,7 @@ class Graphics {
     _onObjectSelected(fEvent) {
         const {target} = fEvent;
         const params = this.createObjectProperties(target);
-
+        console.log('_onObjectSelected');
         this.fire(events.OBJECT_ACTIVATED, params);
     }
 
@@ -1053,7 +1061,8 @@ class Graphics {
             'fill',
             'stroke',
             'strokeWidth',
-            'opacity'
+            'opacity',
+            'watermark'
         ];
         const props = {
             id: stamp(obj),

@@ -22,5 +22,7 @@ import './js/command/resizeCanvasDimension';
 import './js/command/rotate';
 import './js/command/setObjectProperties';
 import './js/command/setObjectPosition';
+import './js/command/setWatermarkMode';
+import './js/command/setWatermark';
 
 module.exports = ImageEditor;

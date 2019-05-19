@@ -19,7 +19,8 @@ module.exports = {
         'TEXT',
         'ICON',
         'FILTER',
-        'SHAPE'
+        'SHAPE',
+        'WATERMARK'
     ),
 
     /**
@@ -45,7 +46,9 @@ module.exports = {
         'ADD_IMAGE_OBJECT': 'addImageObject',
         'RESIZE_CANVAS_DIMENSION': 'resizeCanvasDimension',
         'SET_OBJECT_PROPERTIES': 'setObjectProperties',
-        'SET_OBJECT_POSITION': 'setObjectPosition'
+        'SET_OBJECT_POSITION': 'setObjectPosition',
+        'SET_WATERMARK_MODE': 'setWatermarkMode',
+        'CHANGE_WATERMARK': 'changeWatermark'
     },
 
     /**
@@ -71,7 +74,11 @@ module.exports = {
         REDO_STACK_CHANGED: 'redoStackChanged',
         UNDO_STACK_CHANGED: 'undoStackChanged',
         SELECTION_CLEARED: 'selectionCleared',
-        SELECTION_CREATED: 'selectionCreated'
+        SELECTION_CREATED: 'selectionCreated',
+        // WATERMARK
+        ADD_WATERMARK: 'addWatermark'
+        // FREE_WATERMARK: 'addFreeWatermark',
+        // TIE_WATERMARK: 'addTieWatermark'
     },
 
     /**
@@ -84,7 +91,8 @@ module.exports = {
         'FREE_DRAWING',
         'LINE_DRAWING',
         'TEXT',
-        'SHAPE'
+        'SHAPE',
+        'WATERMARK'
     ),
 
     /**
@@ -209,5 +217,10 @@ module.exports = {
             max: 1,
             value: 0.2
         }
+    },
+    defaultPercentageValus: {
+        min: 0,
+        max: 100,
+        value: 50
     }
 };

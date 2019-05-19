@@ -150,6 +150,7 @@ class Invoker {
      * @returns {Promise}
      */
     execute(...args) {
+        console.log(args);
         if (this._isLocked) {
             return Promise.reject(rejectMessages.isLock);
         }
@@ -157,6 +158,7 @@ class Invoker {
         let [command] = args;
         if (isString(command)) {
             command = commandFactory.create(...args);
+            console.log(command);
         }
 
         return this._invokeExecution(command)
