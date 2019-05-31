@@ -66,7 +66,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.BannerPlugin(BANNER),
+        // new webpack.BannerPlugin(BANNER),
         new ExtractTextPlugin(`${FILENAME}.css`),
         new SafeUmdPlugin()
     ],
