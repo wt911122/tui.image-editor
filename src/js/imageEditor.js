@@ -75,13 +75,16 @@ class ImageEditor {
     constructor(wrapper, options) {
         options = snippet.extend({
             includeUI: false,
-            usageStatistics: true
+            usageStatistics: true,
+            watermarkContent: '集货云'
         }, options);
         // console.log(options);
 
         this.mode = null;
 
         this.activeObjectId = null;
+
+        this.watermarkContent = options.watermarkContent;
 
         /**
          * UI instance

@@ -363,7 +363,6 @@ class Graphics {
         if (this._isSameDrawingMode(mode)) {
             return true;
         }
-
         // If the current mode is not 'NORMAL', 'stopDrawingMode()' will be called first.
         this.stopDrawingMode();
 
@@ -385,7 +384,6 @@ class Graphics {
         if (this._isSameDrawingMode(drawingModes.NORMAL)) {
             return;
         }
-
         const drawingModeInstance = this._getDrawingModeInstance(this.getDrawingMode());
         if (drawingModeInstance && drawingModeInstance.end) {
             // console.log('end draw mode');

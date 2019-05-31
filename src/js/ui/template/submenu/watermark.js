@@ -8,7 +8,7 @@ export default ({locale, iconStyle: {normal, active}}) => (`
     <ul class="tui-image-editor-submenu-item">
         <li class="tui-image-editor-newline tui-image-editor-range-wrap">
             <div class="tui-image-editor-checkbox-wrap fixed-width">
-                <label>集货宝</label>
+                <label>${locale.localize('WatermarkWord')}</label>
             </div>
         </li>
         <li id="tie-watermark-type" class="tui-image-editor-newline tui-image-editor-range-wrap">

@@ -541,7 +541,7 @@ export default {
                 }
             },
             drawWatermarker: type => {
-                this.addWatermark('集货宝', type);
+                this.addWatermark(this.watermarkContent, type);
             }
             // drawWaterMarkMode: type => {
             //     console.log('drawWaterMarkMode');

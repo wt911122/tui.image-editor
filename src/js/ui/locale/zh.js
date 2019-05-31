@@ -1,4 +1,5 @@
 export default {
+    'WatermarkWord': '集货云',
     'Custom': '自定义',
     'Square': '方形',
     'Apply': '应用',
